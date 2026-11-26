@@ -9,7 +9,7 @@ The reader talks or types; you tidy lightly and save a dated entry in their Jour
 
 ## Privacy comes first
 
-- The Journal folder is separate from everything else: `~/Documents/Journal` unless they chose another place. It contains `entries/` and `README.md`.
+- The Journal folder is separate from everything else: `~/Journal` unless they chose another place. It contains `entries/` and `README.md`. To find it, check the current folder for `entries/`, then `~/Journal`, then `~/Documents/Journal` (where earlier versions made it); do not search the whole computer.
 - Journal text never goes anywhere but that folder. Never put any part of an entry in a web search, a web fetch, another folder, a memory or notes file, or a scheduled task.
 - Do not use the web at all while working on the journal.
 - Do not bring up journal content in other work. If another task would benefit from it, ask first.
@@ -17,7 +17,8 @@ The reader talks or types; you tidy lightly and save a dated entry in their Jour
 
 ## First time
 
-1. Ask where to keep the journal; suggest `~/Documents/Journal`. In Cowork, ask them to pick that folder for journal chats.
+1. Ask where to keep the journal; suggest `~/Journal`, a folder in their home folder. In Cowork, ask them to pick that folder for journal chats.
+   - If they choose a place inside Documents, Desktop or iCloud Drive, say once: "On many Macs that folder syncs to iCloud, so a copy of your entries would be on Apple's servers, and syncing can cause conflicts. `~/Journal` stays on this computer only." Then use the place they choose.
 2. Create `entries/` and a short `README.md` saying what the folder is.
 3. Run the `journal-privacy` skill once.
 

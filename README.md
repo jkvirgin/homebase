@@ -15,7 +15,7 @@ You need a Claude Pro subscription and the Claude desktop app.
 2. Open **Customize**, then **Plugins**, then **Add marketplace**. Enter `jkvirgin/homebase`.
 3. Under **Discover**, install **invest**, **journal**, or both.
 4. On the homebase marketplace, turn on **Sync automatically** so you get improvements.
-5. Start a chat and say **"set up invest"**. It will ask which companies you follow and make a Homebase folder in your Documents.
+5. Start a chat and say **"set up invest"**. It will ask which companies you follow and make a Homebase folder in your home folder. It suggests your home folder rather than Documents because Documents often syncs to iCloud.
 
 Using Claude Code instead: `/plugin marketplace add jkvirgin/homebase`, then `/plugin install invest@homebase`.
 
