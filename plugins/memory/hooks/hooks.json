@@ -1,0 +1,16 @@
+{
+  "description": "Read the reader's saved facts and preferences at the start of every chat.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/load-memory.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

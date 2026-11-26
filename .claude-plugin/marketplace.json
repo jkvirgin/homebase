@@ -1,7 +1,7 @@
 {
   "name": "homebase",
   "owner": { "name": "Homebase" },
-  "description": "Small, plain-spoken skills for home use: following your stocks and keeping a journal.",
+  "description": "Small, plain-spoken skills for home use: following your stocks, keeping a journal, and remembering what matters to you.",
   "plugins": [
     {
       "name": "invest",
@@ -12,6 +12,11 @@
       "name": "journal",
       "source": "./plugins/journal",
       "description": "A private journal kept as plain files on your own computer."
+    },
+    {
+      "name": "memory",
+      "source": "./plugins/memory",
+      "description": "Remember facts and preferences across every chat, and keep a dated history to look things up later. Plain files on your own computer."
     }
   ]
 }
