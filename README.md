@@ -6,6 +6,7 @@ Small, plain-spoken skills for Claude, for home use. Install what you want; skip
 |---|---|
 | **invest** | A weekly brief on the companies you follow, quarterly report analysis straight from SEC filings, a view of your own holdings, and first-read research on a company. Read-only: it never logs in to a brokerage and never tells you to buy or sell. |
 | **journal** | A private journal. You talk or type, it tidies lightly, and saves a dated file on your own computer. |
+| **memory** | So you don't have to repeat yourself. Key facts and preferences are read at the start of every chat, and a dated history of what you did and decided can be searched later. Both are plain files in `~/Homebase/memory`. |
 
 ## Get started (about ten minutes)
 
@@ -17,7 +18,7 @@ You need a Claude Pro subscription and the Claude desktop app.
 4. On the homebase marketplace, turn on **Sync automatically** so you get improvements.
 5. Start a chat and say **"set up invest"**. It will ask which companies you follow and make a Homebase folder in your home folder. It suggests your home folder rather than Documents because Documents often syncs to iCloud.
 
-Using Claude Code instead: `/plugin marketplace add jkvirgin/homebase`, then `/plugin install invest@homebase`.
+Using Claude Code instead: `/plugin marketplace add jkvirgin/homebase`, then `/plugin install invest@homebase` (or `journal@homebase`, `memory@homebase`).
 
 ## What to say
 
@@ -27,10 +28,12 @@ Using Claude Code instead: `/plugin marketplace add jkvirgin/homebase`, then `/p
 - "Research Costco"
 - "Journal entry" and then just talk
 - "What's new" to see what changed
+- "Remember that…", "What do you remember about me", "Forget that…"
+- "Log this", "What did we do about…", "When did we…"
 
 ## Your data is yours
 
-- Your watchlist, holdings and journal are ordinary files on your own computer. Nothing personal is ever stored in this repository or sent to whoever maintains it.
+- Your watchlist, holdings, journal and memory are ordinary files on your own computer. Nothing personal is ever stored in this repository or sent to whoever maintains it.
 - Numbers come from SEC EDGAR, the government's free filing system. Prices are end-of-day closes from public quote pages, and news comes from web search; both can be delayed.
 - Anything you type to Claude is sent to Anthropic, as with any chat. Say "is my journal private" for the plain version.
 - This is information to help you read your own investments. It is not financial, tax or legal advice.
