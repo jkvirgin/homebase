@@ -9,8 +9,9 @@ Create the reader's Homebase folder and fill it in with them. Everything persona
 
 ## Find or make the folder
 
-1. Look for a folder that contains `invest/watchlist.md`: the current working folder first, then `~/Documents/Homebase`. Check those two places only; do not search the whole computer.
-2. If there is none, ask where to make it and suggest `~/Documents/Homebase`. In Cowork, ask them to pick that folder for this chat.
+1. Look for a folder that contains `invest/watchlist.md`: the current working folder first, then `~/Homebase`, then `~/Documents/Homebase` (where earlier versions made it). Check those three places only; do not search the whole computer.
+2. If there is none, ask where to make it and suggest `~/Homebase`, a folder in their home folder. In Cowork, ask them to pick that folder for this chat.
+   - If they choose a place inside Documents, Desktop or iCloud Drive, say once: "On many Macs that folder syncs to iCloud, which can cause sync conflicts and puts a copy of these files on Apple's servers. `~/Homebase` does not sync." Then use the place they choose.
 3. Create only what is missing. Never overwrite a file that exists.
 
 ```
