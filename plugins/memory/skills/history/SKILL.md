@@ -26,6 +26,7 @@ Each day is a heading `## <Weekday, Month D, YYYY>`, newest at the top. Under it
 - At the end of real work (something built, changed, decided or set up), offer once: "Should I add today's work to your history?" Do not offer after a quick question.
 - Write outcomes, not chatter: what changed, what was decided and why, what is still open.
 - The same "never save" rules as `remember` apply: no passwords or account numbers, nothing from the journal.
+- In a journal chat, do not offer to log anything, and never record that an entry was written or what it was about.
 
 ## Looking things up
 
