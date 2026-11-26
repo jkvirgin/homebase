@@ -1,0 +1,5 @@
+{
+  "name": "journal",
+  "description": "A private journal kept as plain files on your own computer.",
+  "author": { "name": "Homebase" }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "homebase",
+  "owner": { "name": "Homebase" },
+  "description": "Small, plain-spoken skills for home use: following your stocks and keeping a journal.",
+  "plugins": [
+    {
+      "name": "invest",
+      "source": "./plugins/invest",
+      "description": "Follow your stocks: a weekly brief, quarterly report analysis from SEC filings, a portfolio view and company research. Read-only."
+    },
+    {
+      "name": "journal",
+      "source": "./plugins/journal",
+      "description": "A private journal kept as plain files on your own computer."
+    }
+  ]
+}

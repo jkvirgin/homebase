@@ -1,0 +1,5 @@
+{
+  "name": "invest",
+  "description": "Follow your stocks: a weekly brief, quarterly report analysis from SEC filings, a portfolio view and company research. Read-only.",
+  "author": { "name": "Homebase" }
+}
