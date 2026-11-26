@@ -1,7 +1,9 @@
 {
   "name": "homebase",
-  "owner": { "name": "Homebase" },
-  "description": "Small, plain-spoken skills for home use: following your stocks, keeping a journal, and remembering what matters to you.",
+  "owner": {
+    "name": "Homebase"
+  },
+  "description": "Small, plain-spoken skills for home use: following your stocks, keeping a journal, remembering what matters to you, training, and learning from videos.",
   "plugins": [
     {
       "name": "invest",
@@ -17,6 +19,16 @@
       "name": "memory",
       "source": "./plugins/memory",
       "description": "Remember facts and preferences across every chat, and keep a dated history to look things up later. Plain files on your own computer."
+    },
+    {
+      "name": "trainer",
+      "source": "./plugins/trainer",
+      "description": "A personal trainer that keeps your log and coaches from it: workouts, walks, food, sleep, weight and how you feel. Plain files on your own computer."
+    },
+    {
+      "name": "learn",
+      "source": "./plugins/learn",
+      "description": "Learn from YouTube without watching it all: a short summary with clickable timestamps, saved as a page you can open, plus videos suggested for what you are learning."
     }
   ]
 }
