@@ -46,7 +46,7 @@ Find the line, show it, and remove or change it. Confirm in one line. If more th
 ## Never save
 
 - Passwords, PINs, account or card numbers, Social Security or other ID numbers. Say plainly that these do not belong in memory.
-- Anything from the journal. The journal stays separate.
+- Anything from the journal. The journal stays separate. In a journal chat, do not offer to remember anything.
 - Guesses about the reader. Only what they said.
 
 ## Privacy, in plain words (say once, the first time)
