@@ -39,6 +39,7 @@ You need a Claude Pro subscription and Claude Code (the Code tab in the Claude d
 - "What's new" to see what changed
 - "Set up my trainer", "Log my workout", "I had eggs and toast", "What should I do today", "How was my week"
 - Paste a YouTube link, or "Find me a video on pruning apple trees"
+- "Update homebase" or "Is there anything new" to get the latest and install new plugins, with Claude doing the steps
 - "Remember that…", "What do you remember about me", "Forget that…"
 - "Log this", "What did we do about…", "When did we…"
 
@@ -53,4 +54,4 @@ You need a Claude Pro subscription and Claude Code (the Code tab in the Claude d
 
 ## If something is off
 
-Ask Claude first: "that number looks wrong, check it against the filing" works. To get the latest version in Claude Code, type `/plugin marketplace update homebase`. In Cowork, open Customize, Plugins, the homebase marketplace, and select **Check for updates**.
+Ask Claude first: "that number looks wrong, check it against the filing" works. To get the latest version in Claude Code, say "update homebase" and Claude runs the steps for you (or type `/plugin marketplace update homebase` yourself). In Cowork, open Customize, Plugins, the homebase marketplace, and select **Check for updates**.
