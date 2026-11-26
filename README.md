@@ -12,12 +12,12 @@ Small, plain-spoken skills for Claude, for home use. Install what you want; skip
 You need a Claude Pro subscription and the Claude desktop app.
 
 1. Open the Claude app and go to **Cowork**.
-2. Open **Customize**, then **Plugins**, then **Add marketplace**. Enter the address of this repository.
+2. Open **Customize**, then **Plugins**, then **Add marketplace**. Enter `jkvirgin/homebase`.
 3. Under **Discover**, install **invest**, **journal**, or both.
 4. On the homebase marketplace, turn on **Sync automatically** so you get improvements.
 5. Start a chat and say **"set up invest"**. It will ask which companies you follow and make a Homebase folder in your Documents.
 
-Using Claude Code instead: `/plugin marketplace add <owner>/<repo>`, then `/plugin install invest@homebase`.
+Using Claude Code instead: `/plugin marketplace add jkvirgin/homebase`, then `/plugin install invest@homebase`.
 
 ## What to say
 
