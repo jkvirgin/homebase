@@ -1,0 +1,7 @@
+{
+  "name": "trainer",
+  "description": "A personal trainer that keeps your log and coaches from it: workouts, walks, food, sleep, weight and how you feel. Plain files on your own computer.",
+  "author": {
+    "name": "Homebase"
+  }
+}
