@@ -5,10 +5,16 @@
   edgar.py facts TICKER
   edgar.py exhibits TICKER ACCESSION
   edgar.py text URL --out FILE
+  edgar.py prices TICKER [TICKER ...] [--since YYYY-MM-DD]     (no contact needed)
 
 SEC's fair-access rule asks every program to name itself and give a contact
 email. Pass --contact you@example.com, or set HOMEBASE_CONTACT. The email goes
 to sec.gov only, in the request header, and nowhere else.
+
+`prices` is the one command that does not use the SEC, which publishes no share
+prices. It reads end-of-day closes from public quote pages (Yahoo Finance, then
+Nasdaq). Those are unofficial and can change or stop without notice. Only the
+ticker is sent.
 """
 import argparse
 import datetime as dt
@@ -231,6 +237,61 @@ def cmd_text(args):
         print(f"  line {text.count(chr(10), 0, m.start()) + 1}: {m.group().strip()[:90]}")
 
 
+def _closes(ticker):
+    """[(date, close)] oldest first, and the source name. Tries Yahoo, then Nasdaq."""
+    ua = {"User-Agent": "Mozilla/5.0 (homebase-invest)", "Accept": "application/json"}
+    sym = ticker.upper().replace(".", "-")
+    try:
+        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?range=1y&interval=1d"
+        with urllib.request.urlopen(urllib.request.Request(url, headers=ua), timeout=20) as r:
+            res = json.loads(r.read())["chart"]["result"][0]
+        closes = res["indicators"]["quote"][0]["close"]
+        out = [(dt.datetime.fromtimestamp(t, dt.timezone.utc).date().isoformat(), c)
+               for t, c in zip(res["timestamp"], closes) if c is not None]
+        if out:
+            return out, "Yahoo Finance"
+    except Exception:
+        pass
+    try:
+        today = dt.date.today()
+        url = (f"https://api.nasdaq.com/api/quote/{sym}/historical?assetclass=stocks"
+               f"&fromdate={today - dt.timedelta(days=366)}&todate={today}&limit=300")
+        with urllib.request.urlopen(urllib.request.Request(url, headers=ua), timeout=20) as r:
+            rows = json.loads(r.read())["data"]["tradesTable"]["rows"]
+        out = []
+        for row in rows:
+            m, d, y = row["date"].split("/")
+            out.append((f"{y}-{m}-{d}", float(row["close"].replace("$", "").replace(",", ""))))
+        if out:
+            return sorted(out), "Nasdaq"
+    except Exception:
+        pass
+    return [], None
+
+
+def cmd_prices(args):
+    today = dt.date.today()
+    since = args.since or (today - dt.timedelta(days=7)).isoformat()
+    print(f"End-of-day closes, unofficial public quote data. Run {today.isoformat()}.\n")
+    for ticker in args.tickers:
+        rows, src = _closes(ticker)
+        if not rows:
+            print(f"- {ticker.upper()}: not found. Use web search and name the site and date.")
+            continue
+        last_date, last = rows[-1]
+
+        def change(from_date):
+            base = [c for d, c in rows if d <= from_date]
+            return f"{(last / base[-1] - 1) * 100:+.1f}%" if base else "n/a"
+
+        hi = max(c for _, c in rows)
+        lo = min(c for _, c in rows)
+        month = (today - dt.timedelta(days=30)).isoformat()
+        print(f"- {ticker.upper()}: close {last:,.2f} on {last_date} ({src}) | since {since}: {change(since)}"
+              f" | 30 days: {change(month)} | 1 year: {change(rows[0][0])}"
+              f" | 1-year range of closes {lo:,.2f} to {hi:,.2f}")
+
+
 def main():
     global _contact
     p = argparse.ArgumentParser(description="Read-only SEC EDGAR helper.")
@@ -253,6 +314,10 @@ def main():
     t.add_argument("url")
     t.add_argument("--out", required=True)
     t.set_defaults(fn=cmd_text)
+    pr = sub.add_parser("prices")
+    pr.add_argument("tickers", nargs="+")
+    pr.add_argument("--since")
+    pr.set_defaults(fn=cmd_prices)
     args = p.parse_args()
     _contact = args.contact
     args.fn(args)

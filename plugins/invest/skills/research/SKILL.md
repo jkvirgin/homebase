@@ -12,7 +12,7 @@ A first read on a business, from its own filings. It ends with what would have t
 
 1. Confirm which company and ticker; similar names are common. Find the Homebase folder and read `invest/lessons.md`.
 2. With the `sec-data` skill: `filings` to find the latest 10-K and 10-Q, `facts` for three years and recent quarters, `text` on the 10-K and read Item 1 (Business), Item 1A (Risk Factors) and the Management's Discussion.
-3. Web search for the last six months of news that changes the picture, and the latest close.
+3. The latest close and one-year change with the `sec-data` skill's `prices` command. Web search for the last six months of news that changes the picture.
 4. Save to `invest/research/<TICKER>-YYYY-MM-DD.md`, then show it.
 
 ## Shape

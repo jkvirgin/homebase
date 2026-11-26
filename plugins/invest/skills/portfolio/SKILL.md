@@ -30,7 +30,7 @@ AAPL,50,142.10,2021-03-15,IRA,
 
 ## Showing it
 
-1. Latest close for each ticker by web search, with the site and date named.
+1. Latest close for each ticker with the `sec-data` skill's `prices` command (tickers only), with the source and close date named.
 2. Compute per holding: value, gain or loss in dollars and percent, share of the whole.
 
 ```

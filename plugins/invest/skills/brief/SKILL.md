@@ -9,12 +9,13 @@ One page the reader can act on without opening anything else. It is a snapshot o
 
 ## Steps
 
-1. Find the Homebase folder (it contains `invest/watchlist.md`). If it is missing, run the `setup` skill and stop.
+1. Find the Homebase folder: the current folder if it contains `invest/watchlist.md`, otherwise `~/Documents/Homebase`. Check those two places only; do not search the whole computer. If neither has it, run the `setup` skill and stop.
 2. Read `invest/watchlist.md`, `invest/holdings.csv` if present, `invest/settings.md` and `invest/lessons.md`. Note the date of the newest file in `invest/briefs/`; the window is from that date to today, or the last 7 days if there is none.
 3. New filings in the window: use the `sec-data` skill, `filings` for every ticker in one call with `--since`.
-4. Prices and news: web search per company, by ticker and name only. Take the latest close, the change over the window, and only news that changes the picture: results, guidance, deals, leadership, lawsuits, regulators, dividend changes. Skip analyst chatter and price-target notes.
-5. Upcoming: the next earnings date for each company, from the company's investor page or a named site. Mark a date "expected" unless the company has confirmed it.
-6. Save the brief to `invest/briefs/YYYY-MM-DD.md`, then show it.
+4. Prices: the `sec-data` skill's `prices` command for every ticker in one call, with `--since` set to the start of the window.
+5. News: web search per company, by ticker and name only. Keep only news that changes the picture: results, guidance, deals, leadership, lawsuits, regulators, dividend changes. Skip analyst chatter and price-target notes.
+6. Upcoming: the next earnings date for each company, from the company's investor page or a named site. Mark a date "expected" unless the company has confirmed it.
+7. Save the brief to `invest/briefs/YYYY-MM-DD.md`, then show it.
 
 ## Shape
 

@@ -31,7 +31,7 @@ Using Claude Code instead: `/plugin marketplace add <owner>/<repo>`, then `/plug
 ## Your data is yours
 
 - Your watchlist, holdings and journal are ordinary files on your own computer. Nothing personal is ever stored in this repository or sent to whoever maintains it.
-- Numbers come from SEC EDGAR, the government's free filing system. Prices and news come from web search and can be delayed.
+- Numbers come from SEC EDGAR, the government's free filing system. Prices are end-of-day closes from public quote pages, and news comes from web search; both can be delayed.
 - Anything you type to Claude is sent to Anthropic, as with any chat. Say "is my journal private" for the plain version.
 - This is information to help you read your own investments. It is not financial, tax or legal advice.
 

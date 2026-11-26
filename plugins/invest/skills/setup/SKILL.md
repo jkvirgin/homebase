@@ -9,7 +9,7 @@ Create the reader's Homebase folder and fill it in with them. Everything persona
 
 ## Find or make the folder
 
-1. Look for a folder that contains `invest/watchlist.md`: the current working folder first, then `~/Documents/Homebase`.
+1. Look for a folder that contains `invest/watchlist.md`: the current working folder first, then `~/Documents/Homebase`. Check those two places only; do not search the whole computer.
 2. If there is none, ask where to make it and suggest `~/Documents/Homebase`. In Cowork, ask them to pick that folder for this chat.
 3. Create only what is missing. Never overwrite a file that exists.
 

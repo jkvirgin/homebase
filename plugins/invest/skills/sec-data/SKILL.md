@@ -1,6 +1,6 @@
 ---
 name: sec-data
-description: Get a US company's SEC filings and reported financial numbers from EDGAR, free and with no API key. Use whenever a skill or question needs a 10-Q, 10-K, 8-K earnings release, a list of recent filings, or reported figures such as revenue, net income, EPS, cash or debt.
+description: Get a US company's SEC filings and reported financial numbers from EDGAR, and end-of-day share prices, free and with no API key. Use whenever a skill or question needs a 10-Q, 10-K, 8-K earnings release, a list of recent filings, reported figures such as revenue, net income, EPS, cash or debt, or a stock's latest close and recent change.
 user-invocable: false
 ---
 
@@ -40,8 +40,19 @@ If `python3` is missing, do not install anything. Use Path B.
 
 Use web search to find the earnings press release and 10-Q on the company's investor site. Name the page and its date as the source.
 
+## Share prices
+
+```
+python3 ${CLAUDE_SKILL_DIR}/scripts/edgar.py prices AAPL MSFT --since 2026-11-19
+```
+
+- Gives the latest close and its date, and the change since a date, over 30 days and over a year. No contact email is needed and only the ticker is sent.
+- The source is public quote data (Yahoo Finance, then Nasdaq), not the SEC. It is end-of-day, unofficial, and can stop working. Always name the source and the close date beside a price.
+- If it prints "not found", or the script cannot run, use web search and name the site and date. If that fails too, write "not found".
+- Never send share counts, dollar amounts or anything else about the reader with a price lookup.
+
 ## Limits to state when they apply
 
 - Foreign companies (20-F and 6-K filers such as TSM) and funds have no figures in `facts`. Read their filing or release instead.
-- EDGAR has no share prices. Prices come from web search, with the site and time named.
+- EDGAR has no share prices. See "Share prices" below.
 - If all three paths fail, report "could not reach the filing" and stop. Never reconstruct figures from memory.
